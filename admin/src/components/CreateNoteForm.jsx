@@ -41,18 +41,20 @@ export default function CreateNoteForm({ onCreated }) {
         required
         className="border p-2 rounded"
       />
+      <label htmlFor="releaseAt">Release At</label>
       <input
         {...register("releaseAt")}
         type="datetime-local"
         required
         className="border p-2 rounded"
       />
+      <label htmlFor="webhookUrl">Webhook URL (optional)</label>
       <input
         {...register("webhookUrl")}
         placeholder="Webhook URL"
         required
         className="border p-2 rounded"
-        defaultValue={"http://localhost:4000/sink"}
+        defaultValue={"http://sink:4000/sink"}
       />
 
       <button
