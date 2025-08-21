@@ -1,0 +1,63 @@
+
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis:7
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  api:
+    build: ./api
+    container_name: api
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+      - redis
+
+  worker:
+    build: ./worker
+    container_name: worker
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - mongo
+      - redis
+
+  sink:
+    build: ./sink
+    container_name: sink
+    restart: always
+    ports:
+      - "4000:4000"
+    env_file:
+      - .env
+
+  admin:
+    build: ./admin
+    container_name: admin
+    restart: always
+    ports:
+      - "5173:5173"
+    env_file:
+      - .env
+    depends_on:
+      - api
+
+volumes:
+  mongo_data:

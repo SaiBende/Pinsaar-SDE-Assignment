@@ -1,9 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import { getRedisClient } from "../config/redis.js";
-import path from 'path';
 
-dotenv.config({ path: path.resolve(process.cwd(), "../.env") });
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.SINK_PORT || 4000;

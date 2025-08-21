@@ -2,7 +2,7 @@
 node_modules/
 
 # Optional: common ignores
-.env
+
 *.log
 dist/
 build/

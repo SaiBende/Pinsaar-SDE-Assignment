@@ -4,10 +4,9 @@ import connectDB from './config/db.js';
 import path from 'path';
 
 
-dotenv.config({ path: path.resolve(process.cwd(), "../.env") });
+dotenv.config();
 
 const PORT = process.env.API_PORT;
-
 
 const startServer = async () => {
   try {

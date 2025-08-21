@@ -7,7 +7,7 @@ import { deliverNote } from "./deliverNote.js";
 import path from 'path';
 
 
-dotenv.config({ path: path.resolve(process.cwd(), "../.env") });
+dotenv.config();
 
 const { Queue, Worker } = pkg;
 
