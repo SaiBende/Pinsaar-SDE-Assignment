@@ -180,3 +180,11 @@ REDIS_URL=redis://localhost:6379
 ---
 
 
+ ## 📹 Demo & Extras
+ * Screencast: *https://www.loom.com/share/54adc918ae754530bdad103cb5e89f27?sid=c0f36143-eedc-49d5-834f-e50f3936f89a*
+ * Architecture sketch: *![alt text](<Img1.jpg>)
+ ![alt text](<Img2.jpg>)*
+ * Debug diary: *
+ to fastly and quickly test my Use the commands
+ first docker-compose up
+ when it is running, use in terminal ./test.ps1   as per my test given*
